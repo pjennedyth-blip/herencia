@@ -11,25 +11,22 @@ public class CamionDeReparto extends Transporte {
 
     @Override
     public void viajar(int distancia) {
-
         if (distancia <= 0) {
             System.out.println("Error: distancia inválida.");
             return;
         }
-
         double consumo = distancia / 10.0;
-
         if (tieneRefrigeracion) {
             consumo *= 2;
             System.out.println("El camión viaja con carga refrigerada.");
         } else {
             System.out.println("El camión viaja como transporte normal.");
         }
-        if (getcombustible() >= consumo) {
-            setCombustible(getcombustible() - consumo);
+        if (getCombustible() >= consumo) {
+            setCombustible(getCombustible() - consumo);
         } else {
             System.out.println("Combustible insuficiente.");
         }
     }
 }
-// tienerefrigeracion ? 2.0 : 1.0
+
